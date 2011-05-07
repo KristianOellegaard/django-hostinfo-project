@@ -31,14 +31,70 @@
 <body> 
 <div id="summary"> 
   <h1>django-hostinfo-project</h1> 
-  <h2>short but useful information about where the project is hosted</h2> 
+  <h2>This page displays some useful information about where the project is hosted.</h2> 
 </div> 
  
 <div id="instructions"> 
-  <p>Of course, you haven't actually done any work yet. Here's what to do next:</p> 
+  <h2>Host information</h2> 
 	<table>
 		<tr>
-			<td>Key</td><td>Value</td>
+			<td><strong>Key</strong></td><td><strong>Value</strong></td>
+		</tr>
+	{% for key, value in hostinfo.items %}
+	<tr>
+		<td>{{ key }}</td><td>{{ value }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+ 
+<div id="instructions"> 
+  <h2>OS information</h2> 
+	<table>
+		<tr>
+			<td><strong>Key</strong></td><td><strong>Value</strong></td>
+		</tr>
+	{% for key, value in osinfo.items %}
+	<tr>
+		<td>{{ key }}</td><td>{{ value }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+ 
+<div id="instructions"> 
+  <h2>Platform information</h2> 
+	<table>
+		<tr>
+			<td><strong>Key</strong></td><td><strong>Value</strong></td>
+		</tr>
+	{% for key, value in platforminfo.items %}
+	<tr>
+		<td>{{ key }}</td><td>{{ value }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+ 
+<div id="instructions"> 
+  <h2>Environment information</h2> 
+	<table>
+		<tr>
+			<td><strong>Key</strong></td><td><strong>Value</strong></td>
+		</tr>
+	{% for key, value in envinfo.items %}
+	<tr>
+		<td>{{ key }}</td><td>{{ value }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+</div>
+ 
+<div id="instructions"> 
+  <h2>Request information</h2> 
+	<table>
+		<tr>
+			<td><strong>Key</strong></td><td><strong>Value</strong></td>
 		</tr>
 	{% for key, value in request.META.items %}
 	<tr>
@@ -46,7 +102,7 @@
 	</tr>
 	{% endfor %}
 	</table>
-</div> 
+</div>
  
 <div id="explanation"> 
   <p> 
